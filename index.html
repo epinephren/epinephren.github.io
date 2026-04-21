@@ -1,51 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epi Nephren</title>
+  <!-- Save your GitHub avatar as avatar.png in the same folder as this file -->
   <style>
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(255, 255, 255, 0.06);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(96, 165, 250, 0.18), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+
+    .nav {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      height: 100vh;
-      text-align: center;
+      margin-bottom: 64px;
     }
-    .container {
-      max-width: 600px;
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5em;
-    }
-    a.button {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #3b82f6;
-      color: white;
+
+    .nav a {
+      color: var(--muted);
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.2s ease;
+      margin-left: 18px;
+      font-size: 0.95rem;
     }
-    a.button:hover {
-      background: #2563eb;
+
+    .hero {
+      padding: 48px 0 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 16px;
+      max-width: 700px;
+    }
+
+    .lead {
+      max-width: 620px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0 auto 28px;
+    }
+
+    .avatar-shell {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      padding: 6px;
+      margin: 0 auto 24p
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #08111f;
+    }
+
+    .button.secondary {
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        margin-bottom: 40px;
+      }
+
+      .nav .links {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hello, I'm Epi</h1>
-    <p>Welcome to my GitHub Pages site 🚀</p>
-    <a class="button" href="https://github.com/" target="_blank">Visit my GitHub</a>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">EPI NEPHREN</div>
+      <div class="links">
+        <a href="https://github.com/epinephren" target="_blank">GitHub</a>
+        <a href="mailto:nephren@atomicmail.io">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">GitHub Pages</div>
+      <h1>Building sharp, minimal things for the web.</h1>
+      <p class="lead">
+        A short personal landing page for projects, experiments, and whatever comes next.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="https://github.com/epinephren" target="_blank">View GitHub</a>
+        <a class="button secondary" href="mailto:nephren@atomicmail.io">Email Me</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Projects</h2>
+        <p>Small builds, experiments, and work-in-progress ideas.</p>
+      </div>
+      <div class="card">
+        <h2>Focus</h2>
+        <p>Clean design, compact interfaces, and fast iteration.</p>
+      </div>
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Reach out for collaborations, ideas, or interesting work.</p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Epi Nephren
+    </footer>
   </div>
 </body>
 </html>
